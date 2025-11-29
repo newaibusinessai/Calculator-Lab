@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 60">
+  <rect x="5" y="5" width="50" height="50" rx="10" fill="#2563eb"/>
+  <text x="30" y="40" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="white" text-anchor="middle">CL</text>
+  <text x="65" y="40" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#1f2937">Calculator Lab</text>
+</svg>

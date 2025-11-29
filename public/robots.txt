@@ -1,0 +1,7 @@
+# Robots.txt for Calculator Lab
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /private/
+
+Sitemap: https://calculatorlab.org/sitemap.xml

@@ -2,7 +2,13 @@
 
 :root {
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #333333;
+  --primary: #2196F3;
+  --primary-dark: #1976D2;
+  --border-color: #e0e0e0;
+  --text-muted: #666666;
+  --link-color: #0645AD;
+  --link-hover: #0B0080;
 }
 
 @theme inline {
@@ -12,15 +18,235 @@
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  box-sizing: border-box;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: var(--link-color);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Calculator button styles */
+.calc-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background: linear-gradient(to bottom, #f9f9f9, #e3e3e3);
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.2s;
+}
+
+.calc-btn:hover {
+  background: linear-gradient(to bottom, #e3e3e3, #d3d3d3);
+}
+
+.calc-btn-primary {
+  background: linear-gradient(to bottom, #4CAF50, #45a049);
+  color: white;
+  border-color: #45a049;
+}
+
+.calc-btn-primary:hover {
+  background: linear-gradient(to bottom, #45a049, #3d8b40);
+}
+
+/* Input styles */
+.calc-input {
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+  width: 100%;
+}
+
+.calc-input:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 3px rgba(33, 150, 243, 0.3);
+}
+
+/* Result box */
+.result-box {
+  background: #e8f5e9;
+  border: 1px solid #c8e6c9;
+  border-radius: 4px;
+  padding: 16px;
+  margin: 16px 0;
+}
+
+.result-value {
+  font-size: 24px;
+  font-weight: bold;
+  color: #2e7d32;
+}
+
+/* Dark mode support */
+.dark {
+  --background: #1a1a2e;
+  --foreground: #eaeaea;
+  --primary: #64b5f6;
+  --primary-dark: #42a5f5;
+  --border-color: #3a3a4a;
+  --text-muted: #a0a0a0;
+  --link-color: #82b1ff;
+  --link-hover: #b3d4ff;
+}
+
+.dark body {
+  background: var(--background);
+  color: var(--foreground);
+}
+
+.dark .calc-btn {
+  background: linear-gradient(to bottom, #2a2a3a, #1a1a2a);
+  border-color: #4a4a5a;
+  color: #eaeaea;
+}
+
+.dark .calc-btn:hover {
+  background: linear-gradient(to bottom, #3a3a4a, #2a2a3a);
+}
+
+.dark .calc-input {
+  background: #2a2a3a;
+  border-color: #4a4a5a;
+  color: #eaeaea;
+}
+
+.dark .result-box {
+  background: #1a3a2a;
+  border-color: #2a5a3a;
+}
+
+/* Print styles */
+@media print {
+  /* Hide non-essential elements */
+  header,
+  footer,
+  [class*="print:hidden"],
+  .ad-unit,
+  nav,
+  aside,
+  button,
+  .no-print {
+    display: none !important;
+  }
+
+  /* Reset backgrounds for printing */
+  body {
+    background: white !important;
+    color: black !important;
+  }
+
+  .result-box {
+    background: #f0f0f0 !important;
+    border: 1px solid #ccc !important;
+  }
+
+  /* Ensure content takes full width */
+  main {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  /* Add page break hints */
+  .page-break {
+    page-break-before: always;
+  }
+
+  /* Show URLs for links */
+  a[href]:after {
+    content: " (" attr(href) ")";
+    font-size: 0.8em;
+    color: #666;
+  }
+
+  /* Don't show URL for internal links */
+  a[href^="/"]:after,
+  a[href^="#"]:after {
+    content: "";
+  }
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Focus visible for accessibility */
+:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+
+/* Skip to main content link */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: var(--primary);
+  color: white;
+  padding: 8px 16px;
+  z-index: 100;
+  transition: top 0.3s;
+}
+
+.skip-link:focus {
+  top: 0;
+}
+
+/* Selection styling */
+::selection {
+  background: var(--primary);
+  color: white;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #a1a1a1;
+}
+
+.dark ::-webkit-scrollbar-track {
+  background: #2a2a3a;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: #4a4a5a;
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: #5a5a6a;
 }

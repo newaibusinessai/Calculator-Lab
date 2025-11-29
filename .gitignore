@@ -39,3 +39,7 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Build scripts (not needed in production)
+*.py
+SEO Guidance.txt
