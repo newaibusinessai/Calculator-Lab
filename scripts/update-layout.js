@@ -1,4 +1,9 @@
-import type { Metadata } from "next";
+const fs = require('fs');
+const path = require('path');
+
+const layoutPath = path.join(__dirname, '..', 'src', 'app', 'layout.tsx');
+
+const content = `import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
@@ -109,7 +114,7 @@ export default function RootLayout({
         <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com" />
       </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen flex flex-col bg-white`}
+        className={\`\${geistSans.variable} \${geistMono.variable} antialiased min-h-screen flex flex-col bg-white\`}
       >
         {/* Google Analytics */}
         <Script
@@ -117,12 +122,12 @@ export default function RootLayout({
           strategy="afterInteractive"
         />
         <Script id="google-analytics" strategy="afterInteractive">
-          {`
+          {\`
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
             gtag('config', 'G-E5JWX8XPN1');
-          `}
+          \`}
         </Script>
         <Header />
         <main className="flex-grow">{children}</main>
@@ -131,3 +136,7 @@ export default function RootLayout({
     </html>
   );
 }
+`;
+
+fs.writeFileSync(layoutPath, content);
+console.log('Updated layout.tsx with Google Analytics');
