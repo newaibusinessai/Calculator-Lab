@@ -1,4 +1,9 @@
-import { Metadata } from "next";
+const fs = require('fs');
+const path = require('path');
+
+const filePath = path.join(__dirname, '..', 'src', 'app', 'blog', '[slug]', 'page.tsx');
+
+const content = `import { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 
@@ -252,15 +257,15 @@ const blogPosts: Record<
       "## Limitations of BMI",
       "BMI is a useful screening tool, but it has significant limitations:",
       "**1. Doesn't Distinguish Fat from Muscle**",
-      "A muscular athlete might have a high BMI despite having low body fat. A bodybuilder with 8% body fat could be classified as \"obese\" by BMI.",
+      "A muscular athlete might have a high BMI despite having low body fat. A bodybuilder with 8% body fat could be classified as \\"obese\\" by BMI.",
       "**2. Doesn't Account for Fat Distribution**",
-      "Where you carry fat matters. Belly fat (visceral fat) is more dangerous than fat in other areas. Someone with a \"normal\" BMI but high belly fat may have elevated health risks.",
+      "Where you carry fat matters. Belly fat (visceral fat) is more dangerous than fat in other areas. Someone with a \\"normal\\" BMI but high belly fat may have elevated health risks.",
       "**3. Age and Gender Differences**",
       "Older adults tend to have more body fat and less muscle. Women naturally carry more fat than men. BMI doesn't account for these differences.",
       "**4. Ethnic Variations**",
       "Health risks at certain BMI levels vary by ethnicity. For example, Asian populations may have higher health risks at lower BMI levels.",
       "**5. Doesn't Measure Health**",
-      "You can have a \"healthy\" BMI but be unfit, eat poorly, and have high blood pressure. Conversely, someone \"overweight\" by BMI could be metabolically healthy.",
+      "You can have a \\"healthy\\" BMI but be unfit, eat poorly, and have high blood pressure. Conversely, someone \\"overweight\\" by BMI could be metabolically healthy.",
       "## Better Health Metrics",
       "Consider using these alongside BMI:",
       "**Waist Circumference**: Men over 40 inches and women over 35 inches have increased health risks",
@@ -294,7 +299,7 @@ const blogPosts: Record<
     content: [
       "Percentages are everywhere—discounts, tips, taxes, grades, statistics. Yet many people struggle with percentage calculations. This guide will teach you quick mental math tricks that make percentages easy.",
       "## Understanding Percentages",
-      "\"Percent\" means \"per hundred.\" So 25% means 25 per 100, or 25/100, or 0.25. This understanding is the key to all percentage calculations.",
+      "\\"Percent\\" means \\"per hundred.\\" So 25% means 25 per 100, or 25/100, or 0.25. This understanding is the key to all percentage calculations.",
       "## The Three Basic Percentage Problems",
       "Most percentage questions fall into three categories:",
       "**1. What is X% of Y?**",
@@ -398,7 +403,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     openGraph: {
       title: post.title,
       description: post.excerpt,
-      url: `https://calculatorlab.org/blog/${slug}`,
+      url: \`https://calculatorlab.org/blog/\${slug}\`,
       type: "article",
       publishedTime: post.date,
     },
@@ -464,13 +469,13 @@ export default async function BlogPostPage({ params }: Props) {
             if (paragraph.startsWith("**") && paragraph.endsWith("**")) {
               return (
                 <p key={index} className="font-semibold text-gray-800">
-                  {paragraph.replace(/\*\*/g, "")}
+                  {paragraph.replace(/\\*\\*/g, "")}
                 </p>
               );
             }
             if (paragraph.startsWith("|")) {
               // Simple table rendering
-              const rows = paragraph.split("\n").filter((r) => r.startsWith("|"));
+              const rows = paragraph.split("\\n").filter((r) => r.startsWith("|"));
               return (
                 <div key={index} className="overflow-x-auto my-4">
                   <table className="min-w-full border border-gray-300">
@@ -503,22 +508,22 @@ export default async function BlogPostPage({ params }: Props) {
                 </ul>
               );
             }
-            if (paragraph.match(/^\d+\.\s/)) {
+            if (paragraph.match(/^\\d+\\.\\s/)) {
               return (
                 <ol key={index} className="list-decimal pl-6 space-y-1">
-                  <li>{paragraph.replace(/^\d+\.\s/, "")}</li>
+                  <li>{paragraph.replace(/^\\d+\\.\\s/, "")}</li>
                 </ol>
               );
             }
             // Handle inline bold
-            const parts = paragraph.split(/(\*\*[^*]+\*\*)/);
+            const parts = paragraph.split(/(\\*\\*[^*]+\\*\\*)/);
             return (
               <p key={index}>
                 {parts.map((part, partIndex) => {
                   if (part.startsWith("**") && part.endsWith("**")) {
                     return (
                       <strong key={partIndex} className="font-semibold">
-                        {part.replace(/\*\*/g, "")}
+                        {part.replace(/\\*\\*/g, "")}
                       </strong>
                     );
                   }
@@ -539,7 +544,7 @@ export default async function BlogPostPage({ params }: Props) {
           {post.relatedCalculators.map((calc) => (
             <Link
               key={calc.slug}
-              href={`/calculators/${calc.category}/${calc.slug}`}
+              href={\`/calculators/\${calc.category}/\${calc.slug}\`}
               className="block p-4 border border-gray-200 rounded-lg hover:shadow-md transition-shadow"
             >
               <span className="text-blue-600 font-medium hover:underline">
@@ -562,3 +567,7 @@ export default async function BlogPostPage({ params }: Props) {
     </div>
   );
 }
+`;
+
+fs.writeFileSync(filePath, content);
+console.log('Added new launch article to blog');

@@ -16,6 +16,15 @@ export const metadata: Metadata = {
 // Blog posts data - in production, this could come from a CMS or markdown files
 const blogPosts = [
   {
+    slug: "introducing-calculator-lab-free-online-calculators",
+    title: "Introducing Calculator Lab: Your Free Online Calculator Destination",
+    excerpt:
+      "Discover Calculator Lab, a newly launched website offering over 225 free online calculators for math, finance, health, and everyday calculations.",
+    category: "Announcements",
+    date: "2024-11-29",
+    readTime: "5 min read",
+  },
+  {
     slug: "how-to-calculate-mortgage-payments",
     title: "How to Calculate Mortgage Payments: A Complete Guide",
     excerpt:

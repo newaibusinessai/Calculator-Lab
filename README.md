@@ -1,36 +1,153 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Calculator Lab
+
+A free online calculator platform with 225+ calculators for math, finance, health, and everyday tasks.
+
+**Live Site:** https://calculatorlab.org
+
+---
+
+## Overview
+
+Calculator Lab provides browser-based calculators that run entirely client-side. No downloads, registration, or data collection required.
+
+### Categories
+
+| Category | Count | Examples |
+|----------|-------|----------|
+| **Math** | 52 | Scientific calculator, percentage, fractions, statistics, geometry |
+| **Financial** | 74 | Mortgage, compound interest, retirement, tax, loans |
+| **Health** | 36 | BMI, calories, macros, body fat, pregnancy |
+| **Other** | 63 | Age calculator, unit converters, GPA, construction |
+
+---
+
+## Tech Stack
+
+- **Framework:** Next.js 16 (App Router)
+- **UI:** React 19
+- **Language:** TypeScript
+- **Styling:** Tailwind CSS 4
+- **Hosting:** Netlify
+
+---
+
+## Project Structure
+
+```
+src/
+├── app/
+│   ├── calculators/
+│   │   ├── math/           # 52 calculators
+│   │   ├── financial/      # 74 calculators
+│   │   ├── health/         # 36 calculators
+│   │   └── other/          # 63 calculators
+│   ├── blog/
+│   ├── guides/
+│   └── [static pages]
+├── components/
+│   ├── Header.tsx
+│   ├── Footer.tsx
+│   ├── CalculatorLayout.tsx
+│   └── [other components]
+└── lib/
+    ├── calculators.ts      # Calculator metadata
+    └── metadata.ts         # SEO utilities
+```
+
+---
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
+
+- Node.js 18+
+- npm or yarn
+
+### Installation
 
 ```bash
+# Clone the repository
+git clone https://github.com/newaibusinessai/Calculator-Lab.git
+cd Calculator-Lab
+
+# Install dependencies
+npm install
+
+# Start development server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open http://localhost:3000 to view the site.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Build for Production
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run build
+npm start
+```
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+## Adding a New Calculator
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. Create a folder in the appropriate category:
+   ```
+   src/app/calculators/[category]/[calculator-slug]/
+   ```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+2. Add two files:
+   - `page.tsx` - Route metadata and component import
+   - `CalculatorName.tsx` - Calculator component with "use client" directive
 
-## Deploy on Vercel
+3. Add the calculator to `src/lib/calculators.ts`:
+   ```typescript
+   {
+     name: "Calculator Name",
+     slug: "calculator-slug",
+     description: "Brief description of what the calculator does.",
+     category: "math" // or "financial", "health", "other"
+   }
+   ```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+4. The sitemap updates automatically.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+
+## Features
+
+- **Real-time calculations** - Results update as users type
+- **Unit conversion** - Many calculators support metric/imperial toggle
+- **Responsive design** - Works on desktop, tablet, and mobile
+- **SEO optimized** - Schema.org markup, dynamic sitemap, meta tags
+- **No tracking** - Calculations stay in the browser
+
+---
+
+## Documentation
+
+- [Technical Documentation](./TECHNICAL-DOCUMENTATION.md) - Architecture and implementation details
+- [Calculator Descriptions](./CALCULATOR-DESCRIPTIONS.md) - Detailed descriptions of all calculators
+
+---
+
+## Deployment
+
+The site deploys automatically to Netlify when changes are pushed to the main branch.
+
+### Environment
+
+- **Domain:** calculatorlab.org (via Hostinger)
+- **DNS:** Netlify nameservers
+- **SSL:** Automatic HTTPS
+
+---
+
+## License
+
+Proprietary - All rights reserved.
+
+---
+
+## Contact
+
+For questions or feedback, visit the [contact page](https://calculatorlab.org/contact).
