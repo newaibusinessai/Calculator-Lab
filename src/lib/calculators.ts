@@ -475,9 +475,9 @@ export const calculators: Calculator[] = [
     "category": "financial"
   },
   {
-    "name": "Social Security Calculator",
+    "name": "US Social Security Calculator",
     "slug": "social-security-calculator",
-    "description": "Estimate your Social Security retirement benefits based on earnings history and claiming age.",
+    "description": "Comprehensive Social Security calculator with 7 tools: Quick Estimate, Retirement Age (FRA), Retirement Benefits, Disability (SSDI), Survivors Benefits, WEP, and GPO calculators.",
     "category": "financial"
   },
   {
