@@ -16,6 +16,15 @@ export const metadata: Metadata = {
 // Blog posts data - in production, this could come from a CMS or markdown files
 const blogPosts = [
   {
+    slug: "complete-guide-to-social-security-benefits-2024",
+    title: "Complete Guide to Social Security Benefits 2024: Everything You Need to Know",
+    excerpt:
+      "Comprehensive guide to Social Security benefits in 2024. Learn about retirement benefits, disability (SSDI), survivors benefits, when to claim, and how to maximize your lifetime benefits.",
+    category: "Finance",
+    date: "2024-12-01",
+    readTime: "15 min read",
+  },
+  {
     slug: "introducing-calculator-lab-free-online-calculators",
     title: "Introducing Calculator Lab: Your Free Online Calculator Destination",
     excerpt:

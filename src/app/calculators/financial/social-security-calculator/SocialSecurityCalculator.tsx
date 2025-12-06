@@ -1045,6 +1045,168 @@ export default function SocialSecurityCalculator() {
           </div>
         )}
 
+        {/* SEO Content Section */}
+        <div className="mt-8 space-y-6">
+          <div className="border-t pt-8">
+            <h2 className="text-2xl font-bold text-gray-800 mb-4">
+              Understanding Social Security Benefits in 2024
+            </h2>
+            <div className="prose prose-sm max-w-none text-gray-600 space-y-4">
+              <p>
+                Social Security is the foundation of retirement income for most Americans. In 2024, over 67 million
+                people receive Social Security benefits, with the average retirement benefit being approximately
+                $1,907 per month. Understanding how your benefits are calculated and when to claim them can
+                significantly impact your lifetime income.
+              </p>
+              <p>
+                Our free Social Security calculator helps you estimate your benefits under various scenarios.
+                Whether you&apos;re planning for retirement, considering early claiming at age 62, or want to
+                maximize benefits by waiting until 70, this tool provides the insights you need to make
+                informed decisions.
+              </p>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="bg-white border border-gray-200 p-5 rounded-lg">
+              <h3 className="text-lg font-semibold text-gray-800 mb-3">2024 Social Security Facts</h3>
+              <ul className="text-sm text-gray-600 space-y-2">
+                <li><strong>Maximum benefit at 70:</strong> $4,873/month</li>
+                <li><strong>Maximum benefit at FRA:</strong> $3,822/month</li>
+                <li><strong>Maximum benefit at 62:</strong> $2,710/month</li>
+                <li><strong>Average retirement benefit:</strong> $1,907/month</li>
+                <li><strong>Maximum taxable earnings:</strong> $168,600</li>
+                <li><strong>COLA increase for 2024:</strong> 3.2%</li>
+                <li><strong>Full Retirement Age (born 1960+):</strong> 67</li>
+              </ul>
+            </div>
+
+            <div className="bg-white border border-gray-200 p-5 rounded-lg">
+              <h3 className="text-lg font-semibold text-gray-800 mb-3">How Benefits Are Calculated</h3>
+              <div className="text-sm text-gray-600 space-y-2">
+                <p>
+                  Social Security calculates your benefit using your highest 35 years of earnings,
+                  adjusted for inflation. This creates your Average Indexed Monthly Earnings (AIME).
+                </p>
+                <p>
+                  Your Primary Insurance Amount (PIA) is then calculated using a progressive formula
+                  with &quot;bend points&quot; that favor lower earners:
+                </p>
+                <ul className="list-disc list-inside mt-2 space-y-1">
+                  <li>90% of first $1,174 of AIME</li>
+                  <li>32% of AIME between $1,174 and $7,078</li>
+                  <li>15% of AIME over $7,078</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div className="bg-blue-50 border border-blue-200 p-5 rounded-lg">
+            <h3 className="text-lg font-semibold text-blue-800 mb-3">When Should You Claim Social Security?</h3>
+            <div className="text-sm text-blue-900 space-y-3">
+              <p>
+                The decision of when to claim Social Security is one of the most important financial decisions
+                you&apos;ll make. Here are key factors to consider:
+              </p>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-4">
+                <div className="bg-white p-4 rounded-lg">
+                  <h4 className="font-semibold text-red-700 mb-2">Claim at 62</h4>
+                  <p className="text-gray-600">
+                    30% reduction from FRA benefit. Consider if you need income now, have health concerns,
+                    or have a shorter life expectancy.
+                  </p>
+                </div>
+                <div className="bg-white p-4 rounded-lg">
+                  <h4 className="font-semibold text-green-700 mb-2">Claim at FRA (66-67)</h4>
+                  <p className="text-gray-600">
+                    Receive 100% of your earned benefit. Good balance between getting benefits sooner
+                    and maximizing monthly amount.
+                  </p>
+                </div>
+                <div className="bg-white p-4 rounded-lg">
+                  <h4 className="font-semibold text-blue-700 mb-2">Claim at 70</h4>
+                  <p className="text-gray-600">
+                    24-32% increase over FRA. Best if you&apos;re healthy, have longevity in your family,
+                    or don&apos;t need the income yet.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="bg-white border border-gray-200 p-5 rounded-lg">
+              <h3 className="text-lg font-semibold text-gray-800 mb-3">Types of Social Security Benefits</h3>
+              <div className="text-sm text-gray-600 space-y-3">
+                <div>
+                  <h4 className="font-medium text-gray-700">Retirement Benefits</h4>
+                  <p>Based on your earnings history. Available at 62 (reduced) to 70 (maximum).</p>
+                </div>
+                <div>
+                  <h4 className="font-medium text-gray-700">Disability Benefits (SSDI)</h4>
+                  <p>For workers who become disabled. Equal to your full PIA regardless of age.</p>
+                </div>
+                <div>
+                  <h4 className="font-medium text-gray-700">Survivors Benefits</h4>
+                  <p>For spouses, children, and parents of deceased workers. Up to 100% of worker&apos;s benefit.</p>
+                </div>
+                <div>
+                  <h4 className="font-medium text-gray-700">Spousal Benefits</h4>
+                  <p>Up to 50% of spouse&apos;s PIA at your FRA, even with no work history.</p>
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-white border border-gray-200 p-5 rounded-lg">
+              <h3 className="text-lg font-semibold text-gray-800 mb-3">Common Social Security Strategies</h3>
+              <div className="text-sm text-gray-600 space-y-3">
+                <div>
+                  <h4 className="font-medium text-gray-700">File and Suspend (Limited)</h4>
+                  <p>Strategy for married couples to maximize combined lifetime benefits.</p>
+                </div>
+                <div>
+                  <h4 className="font-medium text-gray-700">Delayed Claiming</h4>
+                  <p>Wait until 70 for maximum benefit - best for those with longevity and other income sources.</p>
+                </div>
+                <div>
+                  <h4 className="font-medium text-gray-700">Break-Even Analysis</h4>
+                  <p>Calculate the age where total benefits from waiting exceed early claiming (typically 80-82).</p>
+                </div>
+                <div>
+                  <h4 className="font-medium text-gray-700">Coordinated Spousal Claiming</h4>
+                  <p>Optimize timing between spouses for maximum household benefits.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="bg-yellow-50 border border-yellow-200 p-5 rounded-lg">
+            <h3 className="text-lg font-semibold text-yellow-800 mb-3">Special Situations: WEP and GPO</h3>
+            <div className="text-sm text-yellow-900 space-y-3">
+              <p>
+                If you worked for a government employer or in another country where you didn&apos;t pay
+                Social Security taxes, your benefits may be affected by two provisions:
+              </p>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-3">
+                <div className="bg-white p-4 rounded-lg">
+                  <h4 className="font-semibold text-gray-800">Windfall Elimination Provision (WEP)</h4>
+                  <p className="text-gray-600">
+                    Affects your own Social Security benefit if you receive a pension from non-covered work.
+                    Maximum reduction: $558/month in 2024. Eliminated with 30+ years of substantial SS earnings.
+                  </p>
+                </div>
+                <div className="bg-white p-4 rounded-lg">
+                  <h4 className="font-semibold text-gray-800">Government Pension Offset (GPO)</h4>
+                  <p className="text-gray-600">
+                    Affects spouse or survivor benefits if you receive a government pension from non-covered work.
+                    Reduces these benefits by 2/3 of your pension amount.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
         {/* Disclaimer */}
         <div className="bg-gray-50 p-4 rounded-lg mt-6">
           <h3 className="font-semibold text-gray-800 mb-3">Important Disclaimer</h3>
