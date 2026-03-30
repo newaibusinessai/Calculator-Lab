@@ -23,10 +23,23 @@ export const metadata: Metadata = {
     "pace calculator",
     "hydration calculator",
   ],
+  alternates: {
+    canonical: "https://calculatorlab.org/calculators/health",
+    languages: {
+      "en-US": "https://calculatorlab.org/calculators/health",
+      "x-default": "https://calculatorlab.org/calculators/health",
+    },
+  },
   openGraph: {
     title: "Health & Fitness Calculators - BMI, Calorie, TDEE Tools | Calculator Lab",
     description: "Free online health and fitness calculators for BMI, calories, macros, body composition, and more. Start your wellness journey today.",
     url: "https://calculatorlab.org/calculators/health",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Health & Fitness Calculators - BMI, Calorie, TDEE Tools | Calculator Lab",
+    description: "Free online health and fitness calculators for BMI, calories, macros, body composition, and more. Start your wellness journey today.",
+    images: ["/og-image.png"],
   },
 };
 

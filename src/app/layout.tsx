@@ -85,9 +85,7 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
-  verification: {
-    google: "your-google-verification-code",
-  },
+  // Google Search Console verified via DNS TXT record (domain-level verification)
 };
 
 export default function RootLayout({

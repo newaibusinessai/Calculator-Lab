@@ -16,6 +16,42 @@ export const metadata: Metadata = {
 // Blog posts data - in production, this could come from a CMS or markdown files
 const blogPosts = [
   {
+    slug: "how-to-calculate-compound-interest-step-by-step",
+    title: "How to Calculate Compound Interest Step by Step",
+    excerpt:
+      "Learn how to calculate compound interest with easy step-by-step instructions. Understand the formula, see worked examples, and discover how compounding frequency affects your savings and investments.",
+    category: "Finance",
+    date: "2026-03-30",
+    readTime: "8 min read",
+  },
+  {
+    slug: "understanding-tdee-guide",
+    title: "Understanding Your TDEE: A Complete Guide to Total Daily Energy Expenditure",
+    excerpt:
+      "Learn what TDEE is, how it is calculated, and why it matters for weight loss, muscle gain, and maintaining a healthy weight. Includes activity level breakdowns and practical tips.",
+    category: "Health",
+    date: "2026-03-30",
+    readTime: "9 min read",
+  },
+  {
+    slug: "loan-vs-mortgage-calculator",
+    title: "Loan vs Mortgage Calculator: Which One Do You Need?",
+    excerpt:
+      "Confused about when to use a loan calculator vs a mortgage calculator? This guide explains the key differences, when to use each, and how to get accurate results for your financial planning.",
+    category: "Finance",
+    date: "2026-03-30",
+    readTime: "7 min read",
+  },
+  {
+    slug: "unit-conversion-guide",
+    title: "Unit Conversion Guide: Quick Reference for Common Conversions",
+    excerpt:
+      "A practical reference guide for the most common unit conversions in length, weight, temperature, volume, and speed. Includes formulas, quick tips, and conversion tables.",
+    category: "Math",
+    date: "2026-03-30",
+    readTime: "6 min read",
+  },
+  {
     slug: "complete-guide-to-social-security-benefits-2024",
     title: "Complete Guide to Social Security Benefits 2024: Everything You Need to Know",
     excerpt:

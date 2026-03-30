@@ -99,6 +99,55 @@ export function FAQSchema({
   );
 }
 
+// Blog post schema for SEO
+export function BlogPostingSchema({
+  title,
+  description,
+  datePublished,
+  url,
+}: {
+  title: string;
+  description: string;
+  datePublished: string;
+  url: string;
+}) {
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    headline: title,
+    description: description,
+    datePublished: datePublished,
+    dateModified: datePublished,
+    author: {
+      "@type": "Organization",
+      name: "Calculator Lab",
+      url: "https://calculatorlab.org",
+    },
+    publisher: {
+      "@type": "Organization",
+      name: "Calculator Lab",
+      url: "https://calculatorlab.org",
+      logo: {
+        "@type": "ImageObject",
+        url: "https://calculatorlab.org/logo.svg",
+      },
+    },
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": url,
+    },
+    image: "https://calculatorlab.org/og-image.png",
+    url: url,
+  };
+
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+    />
+  );
+}
+
 // Organization schema for homepage
 export function OrganizationSchema() {
   const schema = {

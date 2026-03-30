@@ -24,10 +24,23 @@ export const metadata: Metadata = {
     "paycheck calculator",
     "inflation calculator",
   ],
+  alternates: {
+    canonical: "https://calculatorlab.org/calculators/financial",
+    languages: {
+      "en-US": "https://calculatorlab.org/calculators/financial",
+      "x-default": "https://calculatorlab.org/calculators/financial",
+    },
+  },
   openGraph: {
     title: "Financial Calculators - Free Loan, Mortgage & Investment Tools | Calculator Lab",
     description: "Free online financial calculators for mortgages, loans, investments, retirement planning, and more. Make smarter financial decisions.",
     url: "https://calculatorlab.org/calculators/financial",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Financial Calculators - Free Loan, Mortgage & Investment Tools | Calculator Lab",
+    description: "Free online financial calculators for mortgages, loans, investments, retirement planning, and more. Make smarter financial decisions.",
+    images: ["/og-image.png"],
   },
 };
 

@@ -24,10 +24,23 @@ export const metadata: Metadata = {
     "temperature converter",
     "countdown calculator",
   ],
+  alternates: {
+    canonical: "https://calculatorlab.org/calculators/other",
+    languages: {
+      "en-US": "https://calculatorlab.org/calculators/other",
+      "x-default": "https://calculatorlab.org/calculators/other",
+    },
+  },
   openGraph: {
     title: "Utility Calculators - Date, Time, GPA & Converter Tools | Calculator Lab",
     description: "Free online utility calculators for everyday tasks. Age, date, time, GPA, conversions, and more useful tools.",
     url: "https://calculatorlab.org/calculators/other",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Utility Calculators - Date, Time, GPA & Converter Tools | Calculator Lab",
+    description: "Free online utility calculators for everyday tasks. Age, date, time, GPA, conversions, and more useful tools.",
+    images: ["/og-image.png"],
   },
 };
 

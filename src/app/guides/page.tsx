@@ -38,6 +38,22 @@ const guides = [
     category: "Health",
     icon: "❤️",
   },
+  {
+    slug: "construction-formulas",
+    title: "Construction & Home Improvement Formulas",
+    description:
+      "Essential formulas for estimating concrete, tile, paint, roofing, and lumber for your construction and home improvement projects.",
+    category: "Construction",
+    icon: "🏗️",
+  },
+  {
+    slug: "statistics-reference",
+    title: "Statistics Quick Reference",
+    description:
+      "Key statistics formulas and concepts including mean, median, mode, standard deviation, probability, and regression.",
+    category: "Math",
+    icon: "📊",
+  },
 ];
 
 export default function GuidesPage() {

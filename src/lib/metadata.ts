@@ -72,9 +72,12 @@ export function generateCategoryMetadata(category: string): Metadata {
 
   const url = `https://calculatorlab.org/calculators/${category}`;
 
+  const title = categoryTitles[category] || "Calculators | Calculator Lab";
+  const description = categoryDescriptions[category] || "Free online calculators.";
+
   return {
-    title: categoryTitles[category] || "Calculators | Calculator Lab",
-    description: categoryDescriptions[category] || "Free online calculators.",
+    title,
+    description,
     alternates: {
       canonical: url,
       languages: {
@@ -83,11 +86,17 @@ export function generateCategoryMetadata(category: string): Metadata {
       },
     },
     openGraph: {
-      title: categoryTitles[category],
-      description: categoryDescriptions[category],
+      title,
+      description,
       url,
       type: "website",
       siteName: "Calculator Lab",
+    },
+    twitter: {
+      card: "summary_large_image" as const,
+      title,
+      description,
+      images: ["/og-image.png"],
     },
   };
 }

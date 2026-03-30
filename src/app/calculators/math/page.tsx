@@ -20,10 +20,23 @@ export const metadata: Metadata = {
     "mean median mode calculator",
     "ratio calculator",
   ],
+  alternates: {
+    canonical: "https://calculatorlab.org/calculators/math",
+    languages: {
+      "en-US": "https://calculatorlab.org/calculators/math",
+      "x-default": "https://calculatorlab.org/calculators/math",
+    },
+  },
   openGraph: {
     title: "Math Calculators - Free Online Math Tools | Calculator Lab",
     description: "Free online math calculators for students, teachers, and professionals. Scientific, percentage, fraction, and algebra calculators.",
     url: "https://calculatorlab.org/calculators/math",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Math Calculators - Free Online Math Tools | Calculator Lab",
+    description: "Free online math calculators for students, teachers, and professionals. Scientific, percentage, fraction, and algebra calculators.",
+    images: ["/og-image.png"],
   },
 };
 
