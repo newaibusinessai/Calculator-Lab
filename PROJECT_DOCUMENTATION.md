@@ -13,7 +13,7 @@ Calculator Lab is a free online calculator website with 225+ calculators across 
 
 | Technology | Version/Details |
 |------------|-----------------|
-| Framework | Next.js 16.0.5 |
+| Framework | Next.js 16.0.7 |
 | Language | TypeScript |
 | Styling | Tailwind CSS |
 | Hosting | Netlify (auto-deploy from GitHub) |
@@ -221,20 +221,65 @@ npm run build
 ## Pending Tasks
 
 ### High Priority
-- [ ] Apply for Google AdSense (https://adsense.google.com)
+- [x] Apply for Google AdSense (https://adsense.google.com) — Applied, waiting for verification
 - [ ] Apply for Ezoic as backup ad network
-- [ ] Set up Bing Webmaster Tools
+- [ ] Set up Bing Webmaster Tools (submit sitemap there too)
 
 ### Medium Priority
-- [ ] Monitor Google Search Console for indexing (check after 1 week)
+- [ ] Monitor Google Search Console for indexing
 - [ ] Create social media profiles (Twitter, Facebook, Pinterest)
 - [ ] Build backlinks through Reddit, directories
+- [ ] Resubmit sitemap in Google Search Console after new content deployment
+- [ ] Manually request indexing for new blog posts and guides via URL Inspection tool
 
 ### Future Enhancements
-- [ ] Add more calculators based on traffic data
+- [ ] Add more calculators based on traffic data (consider physics, real-estate, education categories)
 - [ ] Improve popular calculators with more features
-- [ ] Add more blog content for SEO
+- [ ] Add more blog content for SEO (aim for 2-4 posts/month)
 - [ ] Consider adding user accounts for saving calculations
+- [ ] Fix pre-existing ShareButtons hydration mismatch (window.location.href SSR/client difference)
+
+---
+
+## SEO Implementation Details
+
+### Blog Posts (10 total)
+All blog posts include: BlogPosting schema, BreadcrumbList schema, canonical URLs, Twitter cards, Open Graph images.
+
+| # | Slug | Category | Date |
+|---|------|----------|------|
+| 1 | how-to-calculate-compound-interest-step-by-step | Finance | 2026-03-30 |
+| 2 | understanding-tdee-guide | Health | 2026-03-30 |
+| 3 | loan-vs-mortgage-calculator | Finance | 2026-03-30 |
+| 4 | unit-conversion-guide | Math | 2026-03-30 |
+| 5 | complete-guide-to-social-security-benefits-2024 | Finance | 2024-12-01 |
+| 6 | introducing-calculator-lab-free-online-calculators | Announcements | 2024-11-29 |
+| 7 | how-to-calculate-mortgage-payments | Finance | 2024-11-28 |
+| 8 | understanding-compound-interest | Finance | 2024-11-28 |
+| 9 | bmi-guide-what-your-number-means | Health | 2024-11-28 |
+| 10 | percentage-calculations-made-easy | Math | 2024-11-28 |
+
+### Guides (5 total)
+| # | Slug | Category |
+|---|------|----------|
+| 1 | financial-formulas | Finance |
+| 2 | math-reference | Math |
+| 3 | health-metrics | Health |
+| 4 | construction-formulas | Construction (new) |
+| 5 | statistics-reference | Math (new) |
+
+### Category Pages SEO
+All 4 category pages (math, financial, health, other) include:
+- Canonical URLs with language alternates
+- Twitter cards (summary_large_image)
+- Open Graph tags
+- FAQ schema markup
+- Breadcrumb schema markup
+
+### Sitemap
+- **Total URLs**: 253
+- **Dynamic dates**: Per-content lastModified dates (not a single static date)
+- Blog/guide slugs with dates maintained in `src/app/sitemap.ts`
 
 ---
 
@@ -401,14 +446,63 @@ I need help with: [your specific task]
 
 ---
 
+### Session Date: March 30, 2026
+
+**Completed:**
+1. SEO audit and fixes across the entire site
+2. Fixed sitemap: added 2 missing blog slugs (social security guide + intro post), updated all dates to be per-content
+3. Added BlogPosting + BreadcrumbList schema markup to all blog post pages
+4. Added canonical URLs, language alternates, and Twitter cards to all 4 category pages
+5. Enhanced blog post metadata: canonical URLs, OG images, Twitter cards
+6. Added Twitter card support to `generateCategoryMetadata()` in metadata.ts
+7. Removed placeholder Google verification meta tag (already verified via DNS)
+8. Created 4 new blog posts:
+   - "How to Calculate Compound Interest Step by Step" (Finance)
+   - "Understanding Your TDEE: A Complete Guide" (Health)
+   - "Loan vs Mortgage Calculator: Which One Do You Need?" (Finance)
+   - "Unit Conversion Guide: Quick Reference" (Math)
+9. Created 2 new guide pages:
+   - "Construction & Home Improvement Formulas" — concrete, tile, paint, roofing, lumber
+   - "Statistics Quick Reference" — mean, median, mode, std dev, probability, regression
+10. Updated blog listing (10 posts total) and guides listing (5 guides total)
+11. Sitemap now has 253 URLs with 4 distinct lastModified dates
+
+**Key Files Modified:**
+| File | Purpose |
+|------|---------|
+| `src/app/sitemap.ts` | Fixed blog slugs, added new content, dynamic dates |
+| `src/app/calculators/math/page.tsx` | Added canonical + Twitter cards |
+| `src/app/calculators/financial/page.tsx` | Added canonical + Twitter cards |
+| `src/app/calculators/health/page.tsx` | Added canonical + Twitter cards |
+| `src/app/calculators/other/page.tsx` | Added canonical + Twitter cards |
+| `src/lib/metadata.ts` | Added Twitter cards to category metadata |
+| `src/components/CalculatorSchema.tsx` | Added BlogPostingSchema component |
+| `src/app/blog/[slug]/page.tsx` | Added schema, canonical, Twitter + 4 new posts |
+| `src/app/blog/page.tsx` | Added 4 new posts to listing |
+| `src/app/guides/page.tsx` | Added 2 new guides to listing |
+| `src/app/guides/construction-formulas/page.tsx` | NEW guide page |
+| `src/app/guides/statistics-reference/page.tsx` | NEW guide page |
+| `src/app/layout.tsx` | Removed placeholder Google verification |
+
+**Status:**
+- Google AdSense: Applied, awaiting verification
+- Google Search Console: Verified via DNS, sitemap submitted
+- Bing Webmaster Tools: Not yet set up (future task)
+- Social media profiles: Not yet created (future task)
+
+---
+
 ## Recent Git Commits
 
 ```
+235a91e - Add SEO improvements, 4 new blog posts, and 2 new guides
+c8f3823 - Add Neuro app privacy policy and terms of service
+1085260 - Add Google AdSense verification script
+45bc692 - Update project documentation with December 21, 2025 session
 0fc5deb - Add SEO optimization for Social Security Calculator and blog post
 a473015 - Add comprehensive US Social Security Calculator with 7 tools
-d94c560 - Add launch article introducing Calculator Lab
 ```
 
 ---
 
-*Last Updated: December 21, 2025*
+*Last Updated: March 30, 2026*
