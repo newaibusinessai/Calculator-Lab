@@ -98,6 +98,30 @@ export default function TermsPage() {
         </section>
 
         <section>
+          <h2 className="text-xl font-semibold text-gray-800 mb-3">Advertising</h2>
+          <p className="text-gray-600 mb-4">
+            Calculator Lab displays advertisements provided by third-party ad networks, including Google
+            AdSense. By using our website, you acknowledge and agree that:
+          </p>
+          <ul className="list-disc list-inside text-gray-600 space-y-2">
+            <li>Third-party advertisers may use cookies and similar technologies to serve ads based on your
+              browsing activity</li>
+            <li>We do not control the content of third-party advertisements and are not responsible for
+              the products or services advertised</li>
+            <li>Ad content does not constitute an endorsement or recommendation by Calculator Lab</li>
+            <li>You may opt out of personalized advertising by visiting your{" "}
+              <a href="https://adssettings.google.com" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">
+                Google Ads Settings
+              </a>
+            </li>
+          </ul>
+          <p className="text-gray-600 mt-4">
+            For more details on how advertising data is collected and used, please review our{" "}
+            <Link href="/privacy" className="text-blue-600 hover:underline">Privacy Policy</Link>.
+          </p>
+        </section>
+
+        <section>
           <h2 className="text-xl font-semibold text-gray-800 mb-3">Modifications</h2>
           <p className="text-gray-600">
             We reserve the right to modify these Terms of Use at any time. Changes will be effective
