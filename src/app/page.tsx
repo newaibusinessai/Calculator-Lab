@@ -2,7 +2,6 @@ import Link from "next/link";
 import { calculators, categories } from "@/lib/calculators";
 import HomeCalculator from "@/components/HomeCalculator";
 import { OrganizationSchema, WebsiteSchema } from "@/components/CalculatorSchema";
-import { ResponsiveAdUnit } from "@/components/AdUnit";
 
 export default function Home() {
   return (
@@ -57,11 +56,6 @@ export default function Home() {
             </div>
           );
         })}
-      </div>
-
-      {/* Ad banner */}
-      <div className="mb-8 flex justify-center print:hidden">
-        <ResponsiveAdUnit />
       </div>
 
       {/* Info section at the bottom */}

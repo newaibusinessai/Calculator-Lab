@@ -1,7 +1,6 @@
 import Link from "next/link";
 import { Metadata } from "next";
 import { getCalculatorsByCategory } from "@/lib/calculators";
-import { ResponsiveAdUnit } from "@/components/AdUnit";
 import { FAQSchema, BreadcrumbSchema } from "@/components/CalculatorSchema";
 
 export const metadata: Metadata = {
@@ -126,11 +125,6 @@ export default function OtherCalculatorsPage() {
           ))}
         </div>
       </section>
-
-      {/* Ad Unit */}
-      <div className="my-8 flex justify-center">
-        <ResponsiveAdUnit />
-      </div>
 
       {/* All Other Calculators */}
       <section className="mb-10">

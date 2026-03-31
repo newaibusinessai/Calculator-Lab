@@ -2,7 +2,6 @@
 
 import Link from "next/link";
 import { Calculator, getCalculatorsByCategory } from "@/lib/calculators";
-import AdUnit from "./AdUnit";
 import ShareButtons from "./ShareButtons";
 import CalculatorSchema, { BreadcrumbSchema } from "./CalculatorSchema";
 import ErrorBoundary from "./ErrorBoundary";
@@ -86,11 +85,6 @@ export default function CalculatorLayout({
               <ErrorBoundary>{children}</ErrorBoundary>
             </div>
 
-            {/* In-content ad */}
-            <div className="my-6 flex justify-center print:hidden">
-              <AdUnit slot="in-content" />
-            </div>
-
             {/* How to use section */}
             {howTo && howTo.length > 0 && (
               <div className="mt-6 bg-blue-50 border border-blue-200 rounded-lg p-5">
@@ -147,11 +141,6 @@ export default function CalculatorLayout({
 
           {/* Sidebar */}
           <aside className="lg:w-72 flex-shrink-0 print:hidden">
-            {/* Sidebar ad */}
-            <div className="mb-6">
-              <AdUnit slot="sidebar" />
-            </div>
-
             {/* Related calculators */}
             <div className="bg-gray-50 rounded-lg p-4">
               <h3 className="font-semibold text-gray-800 mb-3">
@@ -177,17 +166,9 @@ export default function CalculatorLayout({
               </Link>
             </div>
 
-            {/* Second sidebar ad */}
-            <div className="mt-6">
-              <AdUnit slot="sidebar" />
-            </div>
           </aside>
         </div>
 
-        {/* Bottom banner ad */}
-        <div className="mt-8 flex justify-center print:hidden">
-          <AdUnit slot="banner" />
-        </div>
       </div>
     </>
   );
