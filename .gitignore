@@ -43,3 +43,8 @@ next-env.d.ts
 # Build scripts (not needed in production)
 *.py
 SEO Guidance.txt
+
+# Internal documentation (keep local only, not for production)
+PROJECT_DOCUMENTATION.md
+TECHNICAL-DOCUMENTATION.md
+CALCULATOR-DESCRIPTIONS.md
