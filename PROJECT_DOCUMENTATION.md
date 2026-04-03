@@ -58,7 +58,8 @@ C:\Users\newai\calchub\
 │   ├── og-image.png          # Social sharing image (1200x630)
 │   ├── og-image.svg          # Source SVG for OG image
 │   ├── apple-touch-icon.svg  # iOS home screen icon
-│   └── robots.txt            # Robots file for crawlers
+│   ├── robots.txt            # Robots file for crawlers
+│   └── ads.txt               # AdSense publisher authorization
 ├── src/
 │   ├── app/
 │   │   ├── layout.tsx        # Root layout (Analytics, meta tags, Header/Footer)
@@ -81,7 +82,9 @@ C:\Users\newai\calchub\
 │   │   │   ├── page.tsx
 │   │   │   ├── financial-formulas/
 │   │   │   ├── math-reference/
-│   │   │   └── health-metrics/
+│   │   │   ├── health-metrics/
+│   │   │   ├── construction-formulas/
+│   │   │   └── statistics-reference/
 │   │   └── calculators/
 │   │       ├── math/         # 50+ math calculators
 │   │       ├── financial/    # 70+ financial calculators
@@ -92,7 +95,8 @@ C:\Users\newai\calchub\
 │   │   ├── Footer.tsx        # Site footer
 │   │   ├── HomeCalculator.tsx # Homepage scientific calculator
 │   │   ├── CalculatorLayout.tsx # Shared layout for calculator pages
-│   │   └── CalculatorSchema.tsx # Schema.org structured data
+│   │   ├── CalculatorSchema.tsx # Schema.org structured data
+│   │   └── CookieConsent.tsx  # Cookie consent banner (GDPR/CCPA)
 │   └── lib/
 │       ├── calculators.ts    # Calculator definitions and metadata
 │       └── metadata.ts       # SEO metadata generation utilities
@@ -221,8 +225,12 @@ npm run build
 ## Pending Tasks
 
 ### High Priority
-- [x] Apply for Google AdSense (https://adsense.google.com) — Applied, waiting for verification
-- [ ] Apply for Ezoic as backup ad network
+- [x] Apply for Google AdSense — Approved, Auto Ads enabled, site status "Getting ready"
+- [x] Add ads.txt — Live at https://calculatorlab.org/ads.txt
+- [x] Add cookie consent banner — Shows on first visit, persists choice in localStorage
+- [x] Add advertising section to Terms of Service
+- [ ] Complete AdSense payments setup (action required in AdSense dashboard)
+- [ ] Apply for Ezoic as backup ad network (after AdSense revenue stabilizes)
 - [ ] Set up Bing Webmaster Tools (submit sitemap there too)
 
 ### Medium Priority
@@ -302,8 +310,15 @@ All 4 category pages (math, financial, health, other) include:
 - 500,000 monthly visitors
 - Ad revenue monetization
 
+### Ad Setup
+- **Google AdSense**: Approved. Auto Ads + Auto Optimize enabled. Publisher ID: `ca-pub-7143327137200263`
+- **Ad mode**: Auto Ads (Google places ads automatically, no manual ad slots)
+- **ads.txt**: Live at `/public/ads.txt`
+- **Cookie consent**: `CookieConsent.tsx` component in layout, stores preference in localStorage
+- **Placeholder ad units removed**: `AdUnit.tsx` component exists but is no longer imported anywhere
+
 ### Ad Networks (in order of priority)
-1. **Google AdSense** - Apply first, baseline revenue
+1. **Google AdSense** - Approved, Auto Ads enabled
 2. **Ezoic** - Higher RPM, AI optimization (10K+ visits required)
 3. **Mediavine** - Premium rates (50K+ sessions required)
 
@@ -484,8 +499,30 @@ I need help with: [your specific task]
 | `src/app/guides/statistics-reference/page.tsx` | NEW guide page |
 | `src/app/layout.tsx` | Removed placeholder Google verification |
 
+12. Created `ads.txt` file with Google AdSense publisher ID
+13. Built cookie consent banner component (`CookieConsent.tsx`) with Accept/Decline, localStorage persistence
+14. Added Advertising section to Terms of Service covering third-party ads and Google AdSense
+15. Integrated cookie consent banner into root layout
+16. Google AdSense approved — enabled Auto Ads and Auto Optimize
+17. Removed all placeholder ad units (gray boxes) from homepage, category pages, and calculator layout
+18. AdUnit.tsx component kept but no longer imported anywhere (clean for future manual ad slots if needed)
+
+**Additional Files Modified (AdSense readiness):**
+| File | Purpose |
+|------|---------|
+| `public/ads.txt` | NEW — Google AdSense publisher authorization |
+| `src/components/CookieConsent.tsx` | NEW — Cookie consent banner component |
+| `src/app/layout.tsx` | Added CookieConsent to root layout |
+| `src/app/terms/page.tsx` | Added Advertising section |
+| `src/components/CalculatorLayout.tsx` | Removed all AdUnit imports and placeholder ads |
+| `src/app/page.tsx` | Removed ResponsiveAdUnit import and placeholder |
+| `src/app/calculators/math/page.tsx` | Removed ResponsiveAdUnit import and placeholder |
+| `src/app/calculators/financial/page.tsx` | Removed ResponsiveAdUnit import and placeholder |
+| `src/app/calculators/health/page.tsx` | Removed ResponsiveAdUnit import and placeholder |
+| `src/app/calculators/other/page.tsx` | Removed ResponsiveAdUnit import and placeholder |
+
 **Status:**
-- Google AdSense: Applied, awaiting verification
+- Google AdSense: Approved, Auto Ads ON, site status "Getting ready", payments setup pending
 - Google Search Console: Verified via DNS, sitemap submitted
 - Bing Webmaster Tools: Not yet set up (future task)
 - Social media profiles: Not yet created (future task)
@@ -495,6 +532,9 @@ I need help with: [your specific task]
 ## Recent Git Commits
 
 ```
+f2596d9 - Remove placeholder ad units, switch to AdSense Auto Ads
+893bdaf - Add AdSense readiness: ads.txt, cookie consent banner, terms update
+3ddfe9e - Update project documentation with March 30, 2026 session
 235a91e - Add SEO improvements, 4 new blog posts, and 2 new guides
 c8f3823 - Add Neuro app privacy policy and terms of service
 1085260 - Add Google AdSense verification script
@@ -505,4 +545,4 @@ a473015 - Add comprehensive US Social Security Calculator with 7 tools
 
 ---
 
-*Last Updated: March 30, 2026*
+*Last Updated: April 3, 2026*
