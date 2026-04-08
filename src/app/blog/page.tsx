@@ -16,6 +16,51 @@ export const metadata: Metadata = {
 // Blog posts data - in production, this could come from a CMS or markdown files
 const blogPosts = [
   {
+    slug: "how-to-calculate-your-gpa",
+    title: "How to Calculate Your GPA: Complete Guide for Students",
+    excerpt:
+      "Learn how to calculate your GPA step by step, including weighted and unweighted GPA, how to convert letter grades to grade points, and tips for improving your GPA.",
+    category: "Math",
+    date: "2026-04-08",
+    readTime: "8 min read",
+  },
+  {
+    slug: "retirement-planning-basics",
+    title: "Retirement Planning Basics: How Much Do You Need to Save?",
+    excerpt:
+      "A practical guide to retirement planning fundamentals. Learn how to estimate your retirement needs, understand the key factors that affect your savings goal, and use calculators to plan your future.",
+    category: "Finance",
+    date: "2026-04-08",
+    readTime: "10 min read",
+  },
+  {
+    slug: "understanding-body-fat-percentage",
+    title: "Understanding Body Fat Percentage: Methods, Ranges, and Tips",
+    excerpt:
+      "Learn what body fat percentage is, how it is measured, what healthy ranges look like for men and women, and why it matters more than weight alone for assessing your health.",
+    category: "Health",
+    date: "2026-04-08",
+    readTime: "9 min read",
+  },
+  {
+    slug: "how-to-use-a-scientific-calculator",
+    title: "How to Use a Scientific Calculator: A Beginner's Guide",
+    excerpt:
+      "A beginner-friendly guide to using a scientific calculator. Learn the essential functions, common buttons explained, order of operations, and practical examples.",
+    category: "Math",
+    date: "2026-04-08",
+    readTime: "8 min read",
+  },
+  {
+    slug: "home-improvement-math-calculating-materials",
+    title: "Home Improvement Math: Calculating Materials for Your Next Project",
+    excerpt:
+      "A practical guide to calculating materials for common home improvement projects. Learn how to estimate concrete, tile, paint, and flooring with formulas and examples.",
+    category: "Other",
+    date: "2026-04-08",
+    readTime: "9 min read",
+  },
+  {
     slug: "how-to-calculate-compound-interest-step-by-step",
     title: "How to Calculate Compound Interest Step by Step",
     excerpt:

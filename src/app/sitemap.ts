@@ -3,6 +3,11 @@ import { calculators, categories } from "@/lib/calculators";
 
 // Blog post slugs with dates - keep in sync with blog/[slug]/page.tsx
 const blogSlugs: { slug: string; date: string }[] = [
+  { slug: "how-to-calculate-your-gpa", date: "2026-04-08" },
+  { slug: "retirement-planning-basics", date: "2026-04-08" },
+  { slug: "understanding-body-fat-percentage", date: "2026-04-08" },
+  { slug: "how-to-use-a-scientific-calculator", date: "2026-04-08" },
+  { slug: "home-improvement-math-calculating-materials", date: "2026-04-08" },
   { slug: "how-to-calculate-compound-interest-step-by-step", date: "2026-03-30" },
   { slug: "understanding-tdee-guide", date: "2026-03-30" },
   { slug: "loan-vs-mortgage-calculator", date: "2026-03-30" },
@@ -29,7 +34,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const launchDate = new Date("2024-11-28");
   const staticPageDate = new Date("2024-11-28");
-  const latestUpdate = new Date("2026-03-30");
+  const latestUpdate = new Date("2026-04-08");
 
   // Main pages
   const mainPages: MetadataRoute.Sitemap = [
@@ -60,6 +65,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     {
       url: `${baseUrl}/terms`,
       lastModified: staticPageDate,
+      changeFrequency: "yearly",
+      priority: 0.3,
+    },
+    {
+      url: `${baseUrl}/disclaimer`,
+      lastModified: latestUpdate,
       changeFrequency: "yearly",
       priority: 0.3,
     },

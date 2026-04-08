@@ -58,27 +58,100 @@ export default function Home() {
         })}
       </div>
 
-      {/* Info section at the bottom */}
-      <section className="bg-gray-50 rounded-lg p-5 text-sm">
+      {/* Info section */}
+      <section className="bg-gray-50 rounded-lg p-5 text-sm mb-8">
         <h2 className="text-lg font-bold text-gray-800 mb-2">
-          Free Online Calculators
+          Free Online Calculators for Every Need
         </h2>
         <p className="text-gray-600 mb-3">
-          Calculator Lab provides free online calculators for math, finance, fitness,
-          health, and more. Fast, comprehensive, and convenient - our
-          calculators help you make quick calculations for everyday needs.
+          Calculator Lab provides <strong>{calculators.length}+ free online calculators</strong> for
+          math, finance, health, and everyday use. Every tool is designed to be
+          fast, accurate, and easy to use, with no registration and no downloads
+          required. Just open a calculator and get instant results.
         </p>
         <p className="text-gray-600 mb-3">
-          We have <strong>{calculators.length}+ calculators</strong> covering various
-          categories including financial calculators (mortgage, loan, interest),
-          health calculators (BMI, calorie, body fat), math calculators
-          (scientific, percentage, fraction), and other useful tools (age, date,
-          unit converter).
+          Our calculators use industry-standard formulas and are regularly
+          updated to reflect the latest data, including current tax rates,
+          interest benchmarks, and health guidelines. Whether you are a student,
+          professional, or simply someone who needs a quick answer, Calculator
+          Lab has you covered.
+        </p>
+      </section>
+
+      {/* Detailed category descriptions */}
+      <section className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8 text-sm">
+        <div>
+          <h3 className="font-semibold text-gray-800 mb-2">Math Calculators</h3>
+          <p className="text-gray-600">
+            From basic arithmetic to advanced algebra, our math tools help
+            students and professionals solve problems quickly. Use the scientific
+            calculator for trigonometry and logarithms, the percentage calculator
+            for discounts and tips, or the quadratic formula solver for algebra
+            homework. We also offer statistics tools for mean, median, mode, and
+            standard deviation, plus geometry calculators for area, volume, and
+            perimeter.
+          </p>
+        </div>
+        <div>
+          <h3 className="font-semibold text-gray-800 mb-2">Financial Calculators</h3>
+          <p className="text-gray-600">
+            Make informed financial decisions with our comprehensive suite of
+            money tools. Calculate monthly mortgage payments, compare loan
+            options, estimate compound interest growth, plan for retirement with
+            401k and IRA calculators, or figure out your tax liability. Our
+            financial calculators use standard amortization and present-value
+            formulas trusted by financial professionals.
+          </p>
+        </div>
+        <div>
+          <h3 className="font-semibold text-gray-800 mb-2">Health &amp; Fitness Calculators</h3>
+          <p className="text-gray-600">
+            Track your health and fitness goals with evidence-based tools.
+            Calculate your BMI using the formula recognized by the WHO, find
+            your daily calorie needs with our TDEE calculator, estimate body fat
+            percentage, or plan your macros for specific dietary goals. We also
+            offer pregnancy calculators, heart rate zone tools, and hydration
+            calculators.
+          </p>
+        </div>
+        <div>
+          <h3 className="font-semibold text-gray-800 mb-2">Everyday Utility Tools</h3>
+          <p className="text-gray-600">
+            Practical tools for daily life. Find your exact age in years, months,
+            and days. Convert between units of length, weight, temperature, and
+            volume. Calculate your GPA, estimate concrete or paint for a home
+            project, or generate a secure password. These are the tools you
+            reach for when you need a quick, reliable answer.
+          </p>
+        </div>
+      </section>
+
+      {/* Why Calculator Lab */}
+      <section className="text-sm mb-4">
+        <h2 className="text-lg font-bold text-gray-800 mb-2">
+          Why Use Calculator Lab?
+        </h2>
+        <p className="text-gray-600 mb-3">
+          There are many calculator websites on the internet, but Calculator Lab
+          stands out by combining accuracy, speed, and simplicity. All
+          calculations happen instantly in your browser. No data is sent to any
+          server, so your inputs stay private. Every calculator works on desktop,
+          tablet, and mobile with a responsive design that adapts to your
+          screen.
+        </p>
+        <p className="text-gray-600 mb-3">
+          Beyond just calculators, we publish{" "}
+          <Link href="/blog" className="text-blue-600 hover:underline">educational guides and articles</Link>{" "}
+          that explain the formulas and concepts behind the math. Our{" "}
+          <Link href="/guides" className="text-blue-600 hover:underline">reference guides</Link>{" "}
+          cover financial formulas, math reference sheets, health metrics,
+          construction estimating, and statistics — all free to bookmark and
+          use anytime.
         </p>
         <p className="text-gray-600">
           All our calculators are completely free, require no registration, and
-          work seamlessly on desktop, tablet, and mobile devices. Bookmark your
-          favorite calculators for quick access anytime!
+          work seamlessly across devices. Bookmark your favorites for quick
+          access anytime!
         </p>
       </section>
       </div>
