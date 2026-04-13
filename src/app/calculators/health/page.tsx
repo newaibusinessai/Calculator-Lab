@@ -2,6 +2,7 @@ import Link from "next/link";
 import { Metadata } from "next";
 import { getCalculatorsByCategory } from "@/lib/calculators";
 import { FAQSchema, BreadcrumbSchema } from "@/components/CalculatorSchema";
+import { ResponsiveAdUnit } from "@/components/AdUnit";
 
 export const metadata: Metadata = {
   title: "Health & Fitness Calculators - BMI, Calorie, TDEE Tools | Calculator Lab",
@@ -124,6 +125,11 @@ export default function HealthCalculatorsPage() {
           ))}
         </div>
       </section>
+
+      {/* Ad unit */}
+      <div className="my-8 print:hidden">
+        <ResponsiveAdUnit />
+      </div>
 
       {/* All Health Calculators */}
       <section className="mb-10">

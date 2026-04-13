@@ -2,6 +2,7 @@ import Link from "next/link";
 import { Metadata } from "next";
 import { getCalculatorsByCategory } from "@/lib/calculators";
 import { FAQSchema, BreadcrumbSchema } from "@/components/CalculatorSchema";
+import { ResponsiveAdUnit } from "@/components/AdUnit";
 
 export const metadata: Metadata = {
   title: "Utility Calculators - Date, Time, GPA & Converter Tools | Calculator Lab",
@@ -125,6 +126,11 @@ export default function OtherCalculatorsPage() {
           ))}
         </div>
       </section>
+
+      {/* Ad unit */}
+      <div className="my-8 print:hidden">
+        <ResponsiveAdUnit />
+      </div>
 
       {/* All Other Calculators */}
       <section className="mb-10">

@@ -2,6 +2,7 @@ import Link from "next/link";
 import { Metadata } from "next";
 import { getCalculatorsByCategory } from "@/lib/calculators";
 import { FAQSchema, BreadcrumbSchema } from "@/components/CalculatorSchema";
+import { ResponsiveAdUnit } from "@/components/AdUnit";
 
 export const metadata: Metadata = {
   title: "Financial Calculators - Free Loan, Mortgage & Investment Tools | Calculator Lab",
@@ -125,6 +126,11 @@ export default function FinancialCalculatorsPage() {
           ))}
         </div>
       </section>
+
+      {/* Ad unit */}
+      <div className="my-8 print:hidden">
+        <ResponsiveAdUnit />
+      </div>
 
       {/* All Financial Calculators */}
       <section className="mb-10">
