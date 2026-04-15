@@ -1,5 +1,6 @@
 import { Metadata } from "next";
 import Link from "next/link";
+import AdUnit from "@/components/AdUnit";
 
 export const metadata: Metadata = {
   title: "About Calculator Lab - Free Online Calculators",
@@ -336,6 +337,11 @@ export default function AboutPage() {
             for more details.
           </p>
         </section>
+
+        {/* Ad unit */}
+        <div className="my-8 print:hidden">
+          <AdUnit />
+        </div>
 
         {/* Contact */}
         <section className="bg-gray-50 p-6 rounded-lg">

@@ -1,5 +1,6 @@
 import { Metadata } from "next";
 import Link from "next/link";
+import AdUnit from "@/components/AdUnit";
 
 export const metadata: Metadata = {
   title: "Health Metrics Explained - BMI, Body Fat, Calories & More",
@@ -405,6 +406,11 @@ export default function HealthMetricsPage() {
           </ul>
         </section>
       </article>
+
+      {/* Ad unit */}
+      <div className="mt-8 print:hidden">
+        <AdUnit />
+      </div>
 
       {/* Related Calculators */}
       <section className="mt-12 border-t pt-8">

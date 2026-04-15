@@ -1,5 +1,6 @@
 import { Metadata } from "next";
 import Link from "next/link";
+import AdUnit from "@/components/AdUnit";
 
 export const metadata: Metadata = {
   title: "Statistics Quick Reference - Formulas & Concepts Guide",
@@ -392,6 +393,11 @@ export default function StatisticsReferencePage() {
             </table>
           </div>
         </section>
+
+        {/* Ad unit */}
+        <div className="not-prose mt-8 print:hidden">
+          <AdUnit />
+        </div>
 
         {/* Related Calculators */}
         <section className="not-prose border-t pt-8 mt-8">

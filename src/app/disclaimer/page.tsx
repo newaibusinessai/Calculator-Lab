@@ -1,5 +1,6 @@
 import { Metadata } from "next";
 import Link from "next/link";
+import AdUnit from "@/components/AdUnit";
 
 export const metadata: Metadata = {
   title: "Disclaimer - Calculator Lab",
@@ -179,6 +180,10 @@ export default function DisclaimerPage() {
             this page periodically.
           </p>
         </section>
+
+        <div className="my-8 print:hidden">
+          <AdUnit />
+        </div>
 
         <section className="bg-gray-50 p-6 rounded-lg">
           <h2 className="text-xl font-semibold text-gray-800 mb-3">

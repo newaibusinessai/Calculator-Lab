@@ -1,5 +1,6 @@
 import { Metadata } from "next";
 import Link from "next/link";
+import AdUnit from "@/components/AdUnit";
 
 export const metadata: Metadata = {
   title: "Free Calculator Guides & Resources - Calculator Lab",
@@ -101,6 +102,11 @@ export default function GuidesPage() {
             </div>
           </Link>
         ))}
+      </div>
+
+      {/* Ad unit */}
+      <div className="mt-12 print:hidden">
+        <AdUnit />
       </div>
 
       <section className="mt-12 bg-gray-50 rounded-lg p-6">

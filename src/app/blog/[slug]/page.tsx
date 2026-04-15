@@ -2,6 +2,7 @@ import { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { BlogPostingSchema, BreadcrumbSchema } from "@/components/CalculatorSchema";
+import AdUnit from "@/components/AdUnit";
 
 // Blog post content - in production, this could come from a CMS or markdown files
 const blogPosts: Record<
@@ -1301,6 +1302,11 @@ export default async function BlogPostPage({ params }: Props) {
           })}
         </div>
       </article>
+
+      {/* Ad unit */}
+      <div className="mt-8 print:hidden">
+        <AdUnit />
+      </div>
 
       {/* Related Calculators */}
       <section className="mt-12 border-t pt-8">

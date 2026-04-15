@@ -1,5 +1,6 @@
 import { Metadata } from "next";
 import Link from "next/link";
+import AdUnit from "@/components/AdUnit";
 
 export const metadata: Metadata = {
   title: "Math Reference Sheet - Formulas, Conversions & Quick Reference",
@@ -357,6 +358,11 @@ export default function MathReferencePage() {
           </div>
         </section>
       </article>
+
+      {/* Ad unit */}
+      <div className="mt-8 print:hidden">
+        <AdUnit />
+      </div>
 
       {/* Related Calculators */}
       <section className="mt-12 border-t pt-8">

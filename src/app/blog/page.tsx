@@ -1,5 +1,6 @@
 import { Metadata } from "next";
 import Link from "next/link";
+import AdUnit from "@/components/AdUnit";
 
 export const metadata: Metadata = {
   title: "Calculator Guides & Tips - Calculator Lab Blog",
@@ -205,6 +206,11 @@ export default function BlogPage() {
             </Link>
           </article>
         ))}
+      </div>
+
+      {/* Ad unit */}
+      <div className="mt-12 print:hidden">
+        <AdUnit />
       </div>
 
       {/* Coming soon note */}
