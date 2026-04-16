@@ -189,7 +189,10 @@ export default function BasicCalculator() {
     <CalculatorLayout calculator={calculator}>
       <div className="max-w-xs mx-auto">
         {/* Display */}
-        <div className="bg-gray-100 p-4 rounded mb-4 text-right">
+        <div
+          className="bg-gray-100 p-4 rounded mb-4 text-right cursor-text"
+          title="Type numbers and operators on your keyboard"
+        >
           <div className="text-3xl font-mono truncate">{display}</div>
         </div>
 

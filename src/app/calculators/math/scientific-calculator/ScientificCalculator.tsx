@@ -258,7 +258,10 @@ export default function ScientificCalculator() {
         </div>
 
         {/* Display */}
-        <div className="bg-gray-100 p-4 rounded mb-4 text-right">
+        <div
+          className="bg-gray-100 p-4 rounded mb-4 text-right cursor-text"
+          title="Type numbers and operators on your keyboard"
+        >
           <div className="text-2xl font-mono truncate">{display}</div>
         </div>
 

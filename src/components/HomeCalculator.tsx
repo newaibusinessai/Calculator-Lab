@@ -362,7 +362,10 @@ export default function HomeCalculator() {
         </div>
 
         {/* Display */}
-        <div className="bg-gray-900 text-white p-3 mb-3 text-right rounded">
+        <div
+          className="bg-gray-900 text-white p-3 mb-3 text-right rounded cursor-text"
+          title="Type numbers and operators on your keyboard"
+        >
           <div className="text-2xl font-mono truncate min-w-[200px]">{display}</div>
         </div>
 
