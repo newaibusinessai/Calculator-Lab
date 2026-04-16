@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import CalculatorLayout from "@/components/CalculatorLayout";
 import { getCalculatorBySlug } from "@/lib/calculators";
 
@@ -151,6 +151,66 @@ export default function ScientificCalculator() {
     }
   };
 
+  const appendOperator = (op: string) => {
+    setDisplay((prev) => (prev === "0" ? op : prev + op));
+  };
+
+  // Keyboard input support
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      const target = e.target as HTMLElement;
+      if (
+        target.tagName === "INPUT" ||
+        target.tagName === "TEXTAREA" ||
+        target.isContentEditable
+      ) {
+        return;
+      }
+
+      if (/^[0-9]$/.test(e.key)) {
+        e.preventDefault();
+        inputDigit(e.key);
+      } else if (e.key === ".") {
+        e.preventDefault();
+        inputDecimal();
+      } else if (e.key === "+") {
+        e.preventDefault();
+        appendOperator("+");
+      } else if (e.key === "-") {
+        e.preventDefault();
+        appendOperator("-");
+      } else if (e.key === "*") {
+        e.preventDefault();
+        appendOperator("×");
+      } else if (e.key === "/") {
+        e.preventDefault();
+        appendOperator("÷");
+      } else if (e.key === "^") {
+        e.preventDefault();
+        appendOperator("^");
+      } else if (e.key === "(") {
+        e.preventDefault();
+        appendOperator("(");
+      } else if (e.key === ")") {
+        e.preventDefault();
+        appendOperator(")");
+      } else if (e.key === "Enter" || e.key === "=") {
+        e.preventDefault();
+        calculate();
+      } else if (e.key === "Escape") {
+        e.preventDefault();
+        clearAll();
+      } else if (e.key === "Backspace") {
+        e.preventDefault();
+        backspace();
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [display]);
+
   const Button = ({
     children,
     onClick,
@@ -264,7 +324,7 @@ export default function ScientificCalculator() {
           <Button onClick={() => scientificFunction("abs")} title="Absolute value">
             |x|
           </Button>
-          <Button onClick={() => setDisplay((prev) => prev + "^")} title="Power">
+          <Button onClick={() => appendOperator("^")} title="Power">
             xʸ
           </Button>
         </div>
@@ -296,10 +356,10 @@ export default function ScientificCalculator() {
           <Button onClick={clear} className="bg-gray-200">
             C
           </Button>
-          <Button onClick={() => setDisplay((prev) => prev + "(")} className="bg-gray-200">
+          <Button onClick={() => appendOperator("(")} className="bg-gray-200">
             (
           </Button>
-          <Button onClick={() => setDisplay((prev) => prev + ")")} className="bg-gray-200">
+          <Button onClick={() => appendOperator(")")} className="bg-gray-200">
             )
           </Button>
 
@@ -307,7 +367,7 @@ export default function ScientificCalculator() {
           <Button onClick={() => inputDigit("8")}>8</Button>
           <Button onClick={() => inputDigit("9")}>9</Button>
           <Button
-            onClick={() => setDisplay((prev) => prev + "÷")}
+            onClick={() => appendOperator("÷")}
             className="bg-orange-400 text-white"
           >
             ÷
@@ -317,7 +377,7 @@ export default function ScientificCalculator() {
           <Button onClick={() => inputDigit("5")}>5</Button>
           <Button onClick={() => inputDigit("6")}>6</Button>
           <Button
-            onClick={() => setDisplay((prev) => prev + "×")}
+            onClick={() => appendOperator("×")}
             className="bg-orange-400 text-white"
           >
             ×
@@ -327,7 +387,7 @@ export default function ScientificCalculator() {
           <Button onClick={() => inputDigit("2")}>2</Button>
           <Button onClick={() => inputDigit("3")}>3</Button>
           <Button
-            onClick={() => setDisplay((prev) => prev + "-")}
+            onClick={() => appendOperator("-")}
             className="bg-orange-400 text-white"
           >
             -
@@ -339,7 +399,7 @@ export default function ScientificCalculator() {
             =
           </Button>
           <Button
-            onClick={() => setDisplay((prev) => prev + "+")}
+            onClick={() => appendOperator("+")}
             className="bg-orange-400 text-white"
           >
             +

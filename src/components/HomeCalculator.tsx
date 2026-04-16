@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 
 export default function HomeCalculator() {
@@ -260,6 +260,57 @@ export default function HomeCalculator() {
       router.push(`/search?q=${encodeURIComponent(searchQuery)}`);
     }
   };
+
+  // Keyboard input support
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      const target = e.target as HTMLElement;
+      // Don't interfere with typing in input or textarea fields
+      if (
+        target.tagName === "INPUT" ||
+        target.tagName === "TEXTAREA" ||
+        target.isContentEditable
+      ) {
+        return;
+      }
+
+      if (/^[0-9]$/.test(e.key)) {
+        e.preventDefault();
+        inputDigit(e.key);
+      } else if (e.key === ".") {
+        e.preventDefault();
+        inputDecimal();
+      } else if (e.key === "+") {
+        e.preventDefault();
+        performOperation("+");
+      } else if (e.key === "-") {
+        e.preventDefault();
+        performOperation("-");
+      } else if (e.key === "*") {
+        e.preventDefault();
+        performOperation("×");
+      } else if (e.key === "/") {
+        e.preventDefault();
+        performOperation("÷");
+      } else if (e.key === "Enter" || e.key === "=") {
+        e.preventDefault();
+        calculate();
+      } else if (e.key === "Escape") {
+        e.preventDefault();
+        clear();
+      } else if (e.key === "Backspace") {
+        e.preventDefault();
+        backspace();
+      } else if (e.key === "%") {
+        e.preventDefault();
+        percentage();
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [display, previousValue, operation, waitingForOperand]);
 
   const Button = ({
     children,

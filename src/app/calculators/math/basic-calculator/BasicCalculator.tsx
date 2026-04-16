@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import CalculatorLayout from "@/components/CalculatorLayout";
 import { getCalculatorBySlug } from "@/lib/calculators";
 
@@ -109,6 +109,64 @@ export default function BasicCalculator() {
   const percentage = () => {
     setDisplay(String(parseFloat(display) / 100));
   };
+
+  const backspace = () => {
+    if (display.length > 1) {
+      setDisplay(display.slice(0, -1));
+    } else {
+      setDisplay("0");
+    }
+  };
+
+  // Keyboard input support
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      const target = e.target as HTMLElement;
+      if (
+        target.tagName === "INPUT" ||
+        target.tagName === "TEXTAREA" ||
+        target.isContentEditable
+      ) {
+        return;
+      }
+
+      if (/^[0-9]$/.test(e.key)) {
+        e.preventDefault();
+        inputDigit(e.key);
+      } else if (e.key === ".") {
+        e.preventDefault();
+        inputDecimal();
+      } else if (e.key === "+") {
+        e.preventDefault();
+        performOperation("+");
+      } else if (e.key === "-") {
+        e.preventDefault();
+        performOperation("-");
+      } else if (e.key === "*") {
+        e.preventDefault();
+        performOperation("×");
+      } else if (e.key === "/") {
+        e.preventDefault();
+        performOperation("÷");
+      } else if (e.key === "Enter" || e.key === "=") {
+        e.preventDefault();
+        calculate();
+      } else if (e.key === "Escape") {
+        e.preventDefault();
+        clear();
+      } else if (e.key === "Backspace") {
+        e.preventDefault();
+        backspace();
+      } else if (e.key === "%") {
+        e.preventDefault();
+        percentage();
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [display, previousValue, operation, waitingForOperand]);
 
   const Button = ({
     children,
